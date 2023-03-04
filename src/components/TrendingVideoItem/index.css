@@ -1,0 +1,16 @@
+.trending-item {
+  display: flex;
+  width: 100%;
+  margin: 25px;
+}
+.trending-text-container {
+  margin-left: 10px;
+}
+.trend-publish-count-details-container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 5px;
+}

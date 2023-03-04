@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.video-item-main-container {
+  width: 85vw;
+  background-color: #ebebeb;
+  min-height: 100vh;
+  padding: 20px;
+}
+.video-item-2 {
+  /* align-self: center; */
+  width: 100%;
+}
+.video-item-text-1 {
+  width: 100%;
+  font-family: 'Roboto';
+  font-weight: 500;
+  /* display: flex; */
+}
+.video-item-container {
+  /* display: flex;
+  flex-direction: column;
+  width: 80vw; */
+  /* justify-content: center; */
+}
+.views-like-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 85vw; */
+}
+.like-container {
+  display: flex;
+  align-items: center;
+  margin-right: 13px;
+}
+.views-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.like-dislike-container {
+  display: flex;
+}
+.profile-subscribe-container {
+  display: flex;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.title {
+  padding: 10px;
+  padding-top: 15px;
+  padding-left: 0px;
+}
+.views-count {
+  padding: 5px;
+  font-size: 12px;
+}
+.published-at {
+  padding-left: 30px;
+  font-size: 12px;
+}
+.like-btn {
+  font-size: 12px;
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+}
+.hr-line {
+  margin-top: 10px;
+  color: #475569;
+  /* border: 1px solid #475569; */
+}
+.subscribe-cont {
+  margin-left: 10px;
+  font-size: 13px;
+}
+.channel-profile-2 {
+  height: 35px;
+  width: 35px;
+}
+.description {
+  font-size: 13px;
+  margin-left: 44px;
+  font-weight: 400;
+}
+.liked {
+  color: #2563eb;
+  font-weight: 500;
+}
+.disliked {
+  color: #2563eb;
+  font-weight: 500;
+}
+.save-btn {
+  color: #2563eb;
+}
+.bg-4 {
+  background-color: #000;
+  color: #fff;
+}
+.ht {
+  min-height: 100vh;
+  /* overflow-y: hidden; */
+}
+.veer {
+  color: #fff;
+}
+.load-2 {
+  margin-top: 200px;
+}

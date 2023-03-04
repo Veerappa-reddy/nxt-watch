@@ -1,0 +1,57 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  width: 20vw;
+}
+.menu-item-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: #475569;
+}
+.menu-option {
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  cursor: pointer;
+}
+.menu-follow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+.app-logo {
+  width: 30px;
+  margin: 10px;
+}
+.logos-container {
+  display: flex;
+}
+.contact-us-container {
+  margin-top: 20px;
+  /* color: #424242; */
+}
+.menu-link {
+  text-decoration: none;
+  color: #000;
+}
+.background-menu-option {
+  font-weight: 600;
+}
+.fire {
+  color: red;
+}
+.contact-text {
+  color: #cccccc;
+}
+.icon {
+  color: #424242;
+}
+.weight {
+  font-weight: 600;
+}

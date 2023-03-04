@@ -1,0 +1,27 @@
+.saved {
+  height: 85vh;
+  overflow-y: scroll;
+}
+.saved::-webkit-scrollbar-thumb {
+  display: none;
+}
+.no-saved-videos {
+  width: 350px;
+  margin-bottom: 10px;
+}
+.saved-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.saving {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.no-save {
+  padding: 10px;
+  padding-top: 7px;
+}

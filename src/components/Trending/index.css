@@ -1,0 +1,23 @@
+.trending-container {
+  display: flex;
+  font-family: 'Roboto';
+  margin: 30px;
+  margin-bottom: 10px;
+  margin-left: 34px;
+}
+.trending-heading {
+  padding-left: 10px;
+}
+.trending-videos-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 80vh;
+}
+.trending-videos-container::-webkit-scrollbar {
+  display: none;
+}
+.trend {
+  background-color: #383838;
+  color: #fff;
+}

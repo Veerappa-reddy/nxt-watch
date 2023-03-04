@@ -1,0 +1,80 @@
+.login-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 4px grey;
+  padding: 40px;
+}
+.watch-logo-img {
+  width: 150px;
+  align-self: center;
+  margin: 20px;
+}
+.username-container {
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.password-container {
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.username-input {
+  width: 270px;
+  padding: 5px;
+  border: 1px solid #94a3b8;
+  outline: none;
+}
+.password-input {
+  width: 270px;
+  padding: 5px;
+  border: 1px solid #94a3b8;
+  outline: none;
+}
+.login-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: 'Roboto';
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.show-password-container {
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+}
+.username-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 3px;
+}
+.password-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 3px;
+}
+.show-password {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+.error-msg {
+  font-size: 14px;
+  color: red;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 8px;
+}
