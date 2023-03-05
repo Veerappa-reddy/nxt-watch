@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-top: 16px;
   width: 20vw;
+  list-style-type: none;
 }
 .menu-item-container {
   display: flex;

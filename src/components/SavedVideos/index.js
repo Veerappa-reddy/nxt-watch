@@ -11,6 +11,7 @@ const SavedVideos = () => (
       const {savedVideosList, lightTheme} = value
       const background = lightTheme ? null : 'bg-2'
       const vediosBackground = lightTheme ? null : 'bg-3'
+      const savedVideoLogo = lightTheme ? 'search-icon' : null
 
       return (
         <div className={`bg-container ${background}`}>
@@ -19,7 +20,7 @@ const SavedVideos = () => (
             <Menu />
             <div className={`videos-main-container saved ${vediosBackground}`}>
               <div className="trending-container">
-                <AiFillFire className="search-icon" size={35} color="red" />
+                <AiFillFire className={savedVideoLogo} size={35} color="red" />
                 <h1 className="trending-heading">Saved Videos</h1>
               </div>
               <ul className="videos-container saving">

@@ -7,6 +7,7 @@ const SavedVideoContext = React.createContext({
   clickTheme: () => {},
   menuId: 1,
   clickedMenuOption: () => {},
+  menuOptionLink: '/',
 })
 
 export default SavedVideoContext

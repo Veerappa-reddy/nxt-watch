@@ -99,7 +99,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {isGetError, errorMsg, showPassword} = this.state
+    const {isGetError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
 
     if (jwtToken !== undefined) {

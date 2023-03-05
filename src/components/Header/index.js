@@ -30,7 +30,7 @@ const Header = props => (
             />
           </Link>
           <div className="nav-right-side-details">
-            <button type="button" data-testid="theme">
+            <button type="button" data-testid="theme" className="theme-btn">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/dark-theme-img.png"
                 alt="theme"
@@ -66,7 +66,7 @@ const Header = props => (
                     </button>
                     <button
                       type="button"
-                      className="cancel-btn"
+                      className="confirm-btn"
                       onClick={logout}
                     >
                       Confirm
@@ -87,7 +87,7 @@ const Header = props => (
             className="nav-website-log"
           />
           <div className="nav-right-side-details">
-            <button type="button" data-testid="theme">
+            <button type="button" data-testid="theme" className="theme-btn">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/light-theme-img.png"
                 alt="theme"
@@ -128,10 +128,10 @@ const Header = props => (
                     </button>
                     <button
                       type="button"
-                      className="cancel-btn"
+                      className="confirm-btn"
                       onClick={logout}
                     >
-                      Logout
+                      Confirm
                     </button>
                   </div>
                 </div>

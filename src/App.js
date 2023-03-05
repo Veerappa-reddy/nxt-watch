@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
 import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import Trending from './components/Trending'
@@ -12,7 +12,17 @@ import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 class App extends Component {
-  state = {savedVideosList: [], lightTheme: true, menuId: 1}
+  state = {
+    savedVideosList: [],
+    lightTheme: true,
+    menuId: 1,
+    menuOptionLink: '/',
+  }
+
+  componentDidMount() {
+    const {history} = this.props
+    history.replace('/')
+  }
 
   clickTheme = value => {
     this.setState({lightTheme: value})
@@ -42,13 +52,13 @@ class App extends Component {
     }
   }
 
-  clickedMenuOption = id => {
-    this.setState({menuId: id})
+  clickedMenuOption = (id, link) => {
+    this.setState({menuId: id, menuOptionLink: link})
   }
 
   render() {
-    const {savedVideosList, lightTheme, menuId} = this.state
-    console.log(lightTheme)
+    const {savedVideosList, lightTheme, menuId, menuOptionLink} = this.state
+    // console.log(lightTheme)
 
     return (
       <SavedVideoContext.Provider
@@ -59,6 +69,7 @@ class App extends Component {
           clickTheme: this.clickTheme,
           menuId,
           clickedMenuOption: this.clickedMenuOption,
+          menuOptionLink,
         }}
       >
         <Switch>
@@ -79,4 +90,4 @@ class App extends Component {
     )
   }
 }
-export default App
+export default withRouter(App)

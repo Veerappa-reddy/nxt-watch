@@ -94,11 +94,20 @@ class Trending extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="home-videos-container load" data-testid="loader">
-      <div className="loader-container">
-        <Loader type="ThreeDots" color="#000" height="50" width="50" />
-      </div>
-    </div>
+    <SavedVideoContext.Consumer>
+      {value => {
+        const {lightTheme} = value
+
+        const loader = lightTheme ? 'blue' : 'red'
+        return (
+          <div className="home-videos-container load" data-testid="loader">
+            <div className="loader-container">
+              <Loader type="ThreeDots" color={loader} height="50" width="50" />
+            </div>
+          </div>
+        )
+      }}
+    </SavedVideoContext.Consumer>
   )
 
   renderApiStateDetails = () => {
@@ -163,7 +172,7 @@ class Trending extends Component {
         <Menu />
         <div className="videos-main-container bg-3">
           <div className="trending-container">
-            <AiFillFire className="search-icon" size={35} color="red" />
+            <AiFillFire size={35} color="red" />
             <h1 className="trending-heading">Trending</h1>
           </div>
           <div className="videos-container">{this.renderApiStateDetails()}</div>
@@ -173,9 +182,9 @@ class Trending extends Component {
   )
 
   render() {
-    const {videosList} = this.state
+    // const {videosList} = this.state
 
-    console.log(videosList)
+    // console.log(videosList)
     return (
       <SavedVideoContext.Consumer>
         {value => {

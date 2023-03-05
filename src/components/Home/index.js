@@ -138,11 +138,20 @@ class Home extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="home-videos-container load" data-testid="loader">
-      <div className="loader-container">
-        <Loader type="ThreeDots" color="#000" height="50" width="50" />
-      </div>
-    </div>
+    <SavedVideoContext.Consumer>
+      {value => {
+        const {lightTheme} = value
+
+        const loader = lightTheme ? 'blue' : 'red'
+        return (
+          <div className="home-videos-container load" data-testid="loader">
+            <div className="loader-container">
+              <Loader type="ThreeDots" color={loader} height="50" width="50" />
+            </div>
+          </div>
+        )
+      }}
+    </SavedVideoContext.Consumer>
   )
 
   onChangeSearchInput = event => {
@@ -196,7 +205,7 @@ class Home extends Component {
                     GET IT NOW
                   </button>
                 </div>
-                <button type="button" data-testid="close">
+                <button type="button" data-testid="close" className="close-btn">
                   <AiOutlineClose
                     color="#000"
                     size={20}
@@ -256,7 +265,7 @@ class Home extends Component {
                     GET IT NOW
                   </button>
                 </div>
-                <button type="button" data-testid="close">
+                <button type="button" data-testid="close" className="close-btn">
                   <AiOutlineClose
                     color="#000"
                     size={20}
@@ -276,8 +285,12 @@ class Home extends Component {
                 type="button"
                 data-testid="searchButton"
                 onClick={this.searchResults}
+                className="search-btn "
               >
-                <AiOutlineSearch className="search-icon dark-search" />
+                <AiOutlineSearch
+                  //   className="search-icon dark-search-1"
+                  size={20}
+                />
               </button>
             </div>
             <div className="videos-container">
@@ -300,9 +313,6 @@ class Home extends Component {
   )
 
   render() {
-    const {apiStatus} = this.state
-    console.log(apiStatus)
-
     return this.renderHome()
   }
 }

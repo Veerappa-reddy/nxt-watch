@@ -5,8 +5,12 @@
 .video-item-main-container {
   width: 85vw;
   background-color: #ebebeb;
-  min-height: 100vh;
+  height: 84vh;
+  overflow-y: scroll;
   padding: 20px;
+}
+.video-item-main-container::-webkit-scrollbar {
+  display: none;
 }
 .video-item-2 {
   /* align-self: center; */
@@ -106,6 +110,9 @@
 }
 .veer {
   color: #fff;
+}
+.load-2 {
+  margin-top: 200px;
 }
 .load-2 {
   margin-top: 200px;

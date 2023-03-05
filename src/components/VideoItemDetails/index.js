@@ -85,11 +85,20 @@ class VideoItemDetails extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="home-videos-container load-2" data-testid="loader">
-      <div className="loader-container">
-        <Loader type="ThreeDots" color="#000" height="50" width="50" />
-      </div>
-    </div>
+    <SavedVideoContext.Consumer>
+      {value => {
+        const {lightTheme} = value
+
+        const loader = lightTheme ? 'blue' : 'red'
+        return (
+          <div className="home-videos-container load-2" data-testid="loader">
+            <div className="loader-container">
+              <Loader type="ThreeDots" color={loader} height="50" width="50" />
+            </div>
+          </div>
+        )
+      }}
+    </SavedVideoContext.Consumer>
   )
 
   renderFailureView = () => (
@@ -156,6 +165,7 @@ class VideoItemDetails extends Component {
               width={850}
               height={400}
               className="video"
+              playing
             />
             <div className="video-item-text-1">
               <p className="title">{title}</p>
