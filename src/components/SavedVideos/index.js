@@ -17,7 +17,7 @@ const SavedVideos = () => (
         <div className={`bg-container ${background}`}>
           <Header />
           <div className="home-container">
-            <Menu />
+            <Menu id={4} />
             <div className={`videos-main-container saved ${vediosBackground}`}>
               <div className="trending-container">
                 <AiFillFire className={savedVideoLogo} size={35} color="red" />

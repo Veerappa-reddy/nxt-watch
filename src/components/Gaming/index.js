@@ -153,7 +153,7 @@ class Gaming extends Component {
     <div className="bg-container">
       <Header />
       <div className="home-container">
-        <Menu selectVideoType={this.videoType} />
+        <Menu id={3} />
         <div className="videos-main-container">
           <div className="trending-container">
             <AiFillFire className="search-icon" size={35} color="red" />
@@ -169,7 +169,7 @@ class Gaming extends Component {
     <div className="bg-container bg-2">
       <Header />
       <div className="home-container">
-        <Menu selectVideoType={this.videoType} />
+        <Menu id={3} />
         <div className="videos-main-container bg-3">
           <div className="trending-container">
             <AiFillFire size={35} color="red" />

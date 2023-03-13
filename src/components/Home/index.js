@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+// import {Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai'
 import Menu from '../Menu'
@@ -39,7 +40,7 @@ class Home extends Component {
       },
     }
     const response = await fetch(url, options)
-    console.log(response)
+    // console.log(response)
 
     if (response.ok === true) {
       const data = await response.json()
@@ -188,7 +189,7 @@ class Home extends Component {
       <div className="bg-container">
         <Header />
         <div className="home-container">
-          <Menu />
+          <Menu id={1} />
           <div className="videos-main-container">
             {bannerOpen && (
               <div className="home-banner" data-testid="banner">
@@ -248,7 +249,7 @@ class Home extends Component {
       <div className="bg-container bg-2">
         <Header />
         <div className="home-container">
-          <Menu />
+          <Menu id={1} />
           <div className="videos-main-container bg-3">
             {bannerOpen && (
               <div className="home-banner" data-testid="banner">
@@ -313,6 +314,12 @@ class Home extends Component {
   )
 
   render() {
+    // const jwtToken = Cookies.get('jwt_token')
+
+    // if (jwtToken === undefined) {
+    //   return <Redirect to="/login" />
+    // }
+
     return this.renderHome()
   }
 }

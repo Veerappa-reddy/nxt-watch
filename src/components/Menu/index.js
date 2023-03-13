@@ -25,17 +25,8 @@ const MenuOptions = [
 ]
 
 class Menu extends Component {
-  state = {
-    activeId: 1,
-  }
-
-  active = id => {
-    this.setState({activeId: id})
-    // console.log(id)
-  }
-
   render() {
-    const {activeId} = this.state
+    // const {activeId} = this.state
     // console.log(activeId)
 
     return (
@@ -44,6 +35,7 @@ class Menu extends Component {
           const {lightTheme} = value
 
           const contactUsText = lightTheme ? null : 'contact-text'
+          const {id} = this.props
 
           return (
             <div className="menu-follow-container">
@@ -51,7 +43,7 @@ class Menu extends Component {
                 {MenuOptions.map(each => (
                   <MenuOption
                     each={each}
-                    isActive={activeId === each.id}
+                    isActive={id === each.id}
                     active={this.active}
                     key={each.id}
                   />
@@ -89,19 +81,21 @@ class Menu extends Component {
 const MenuOption = props => (
   <SavedVideoContext.Consumer>
     {value => {
-      const {each} = props
+      const {each, isActive} = props
       const {id, link, optionType, optionIcon} = each
       const MyComponent = optionIcon
-      const {lightTheme, clickedMenuOption, menuId} = value
+      const {lightTheme, clickedMenuOption} = value
       const contactUsText = lightTheme ? null : 'contact-text'
 
       const clickedId = () => {
         clickedMenuOption(id)
       }
 
-      const isActive = menuId === id ? 'fire' : null
+      console.log(isActive)
 
-      const optionFont = menuId === id ? 'weight' : null
+      const active = isActive ? 'fire' : null
+
+      const optionFont = isActive ? 'weight' : null
 
       return (
         <Link to={link} className="menu-link">
@@ -111,7 +105,7 @@ const MenuOption = props => (
               type="button"
               onClick={clickedId}
             >
-              <MyComponent size={20} className={isActive} />
+              <MyComponent size={20} className={active} />
               <h1 className={`menu-option ${optionFont}`}>{optionType}</h1>
             </button>
           </li>

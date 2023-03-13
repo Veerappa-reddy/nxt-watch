@@ -19,11 +19,6 @@ class App extends Component {
     menuOptionLink: '/',
   }
 
-  componentDidMount() {
-    const {history} = this.props
-    history.replace('/')
-  }
-
   clickTheme = value => {
     this.setState({lightTheme: value})
   }

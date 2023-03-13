@@ -82,7 +82,7 @@ class Trending extends Component {
 
   renderTrendingVideos = () => {
     const {videosList} = this.state
-    console.log(videosList)
+    // console.log(videosList)
 
     return (
       <ul className="trending-videos-container">
@@ -153,7 +153,7 @@ class Trending extends Component {
     <div className="bg-container">
       <Header />
       <div className="home-container">
-        <Menu />
+        <Menu id={2} />
         <div className="videos-main-container">
           <div className="trending-container">
             <AiFillFire className="search-icon" size={35} color="red" />
@@ -169,7 +169,7 @@ class Trending extends Component {
     <div className="bg-container bg-2">
       <Header />
       <div className="home-container">
-        <Menu />
+        <Menu id={2} />
         <div className="videos-main-container bg-3">
           <div className="trending-container">
             <AiFillFire size={35} color="red" />
