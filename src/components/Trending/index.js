@@ -1,9 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-import {AiFillFire} from 'react-icons/ai'
+import {BsFire} from 'react-icons/bs'
 import Menu from '../Menu'
 import Header from '../Header'
+import MobileMenus from '../MobileMenus'
 import TrendingVideoItem from '../TrendingVideoItem'
 import SavedVideoContext from '../../context/SavedVideoContext'
 import './index.css'
@@ -93,6 +94,10 @@ class Trending extends Component {
     )
   }
 
+  //   renderTrendingVideos = () => (
+
+  //   )
+
   renderLoadingView = () => (
     <SavedVideoContext.Consumer>
       {value => {
@@ -156,30 +161,58 @@ class Trending extends Component {
         <Menu id={2} />
         <div className="videos-main-container">
           <div className="trending-container">
-            <AiFillFire className="search-icon" size={35} color="red" />
+            <BsFire className="menu-option-icon" size={35} color="red" />
             <h1 className="trending-heading">Trending</h1>
           </div>
           <div className="videos-container">{this.renderApiStateDetails()}</div>
         </div>
+      </div>
+      <div className="mobile-options-container">
+        <MobileMenus id={2} />
       </div>
     </div>
   )
 
   renderDarkTrending = () => (
-    <div className="bg-container bg-2">
+    <div className="trending-bg-container trend-bg-2">
+      <Header />
+      <div className="trend-container">
+        <Menu id={2} />
+        <div className="trend-videos-main-container">
+          <div className="trending-container">
+            <BsFire size={35} color="red" />
+            <h1 className="trending-heading">Trending</h1>
+          </div>
+          <div className="trend-videos-container">
+            {this.renderApiStateDetails()}
+          </div>
+        </div>
+        {/* <div className="mobile-trend-vedios-container">
+                {this.renderApiStateDetails()}
+              </div> */}
+      </div>
+      <div className="mobile-options-container">
+        <MobileMenus id={2} />
+      </div>
+    </div>
+  )
+
+  /* <div className="bg-container bg-2">
       <Header />
       <div className="home-container">
         <Menu id={2} />
         <div className="videos-main-container bg-3">
           <div className="trending-container">
-            <AiFillFire size={35} color="red" />
+            <BsFire size={35} color="red" />
             <h1 className="trending-heading">Trending</h1>
           </div>
           <div className="videos-container">{this.renderApiStateDetails()}</div>
         </div>
       </div>
-    </div>
-  )
+      <div className="mobile-options-container">
+        <MobileMenus id={2} />
+      </div>
+    </div> */
 
   render() {
     // const {videosList} = this.state

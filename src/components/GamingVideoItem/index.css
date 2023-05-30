@@ -1,3 +1,14 @@
 .game-views {
   padding-left: 5px;
 }
+.game-video-item {
+  margin: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 576px) {
+  .game-video-item {
+    width: 150px;
+  }
+}

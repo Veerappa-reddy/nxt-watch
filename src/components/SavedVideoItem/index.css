@@ -1,5 +1,45 @@
-.saved-video-item-container {
+.saved-vedio-item {
+  display: flex;
+  width: 100%;
+  margin: 25px;
+}
+.saved-vedio-text-container {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
 }
 .two {
   height: 150px;
+}
+.saved-vedio-views-container {
+  display: flex;
+  flex-direction: column;
+}
+.saved-vedio-views {
+  font-size: 12px;
+  font-family: 'Roboto';
+  padding-right: 10px;
+}
+.trend-publish-count-details-container {
+  display: flex;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+@media screen and (max-width: 576px) {
+  .two {
+    height: 110px;
+    width: 150px;
+  }
+  .saved-vedio-text-container {
+    flex-direction: column;
+  }
+  .saved-vedio-views {
+    font-size: 12px;
+    font-family: 'Roboto';
+  }
+  .saved-vedio-item {
+    margin-left: 8px;
+    width: 100%;
+  }
 }

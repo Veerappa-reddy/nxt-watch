@@ -1,0 +1,24 @@
+.game-videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow-y: scroll;
+  height: 90vh;
+  justify-content: center;
+  list-style-type: none;
+}
+.gaming-videos-main-container {
+  width: 100vw;
+  background-color: #f9f9f9;
+  height: 60%;
+}
+@media screen and (max-width: 576px) {
+  .game-videos-container {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .game-videos-container {
+    overflow-y: visible;
+    min-height: 100vh;
+  }
+}

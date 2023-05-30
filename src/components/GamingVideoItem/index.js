@@ -16,12 +16,11 @@ const GamingVideoItem = props => {
         return (
           <Link to={`/videos/${id}`} className="menu-link">
             <li>
-              <div className={`video-item ${gameLight}`}>
+              <div className={`game-video-item ${gameLight}`}>
                 <img src={thumbnailUrl} alt="thumbnail" className="video-img" />
                 <div className="video-detail-container">
                   <div>
                     <p className="video-title">{title}</p>
-
                     <div className="publish-count-details-container">
                       <p className="game-views">{viewCount} views</p>
                     </div>

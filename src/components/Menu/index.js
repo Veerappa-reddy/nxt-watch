@@ -1,4 +1,5 @@
-import {AiFillHome, AiFillFire} from 'react-icons/ai'
+import {AiFillHome} from 'react-icons/ai'
+import {BsFire} from 'react-icons/bs'
 import {Component} from 'react'
 import {SiYoutubegaming} from 'react-icons/si'
 import {MdPlaylistAdd} from 'react-icons/md'
@@ -14,7 +15,7 @@ const MenuOptions = [
     optionType: 'Home',
     link: '/',
   },
-  {id: 2, optionIcon: AiFillFire, optionType: 'Trending', link: '/trending'},
+  {id: 2, optionIcon: BsFire, optionType: 'Trending', link: '/trending'},
   {id: 3, optionIcon: SiYoutubegaming, optionType: 'Gaming', link: '/gaming'},
   {
     id: 4,
@@ -34,7 +35,9 @@ class Menu extends Component {
         {value => {
           const {lightTheme} = value
 
-          const contactUsText = lightTheme ? null : 'contact-text'
+          /* const contactUsText = lightTheme ? null : 'contact-text' */
+
+          const contactUsText2 = lightTheme ? null : 'contact-text-color'
           const {id} = this.props
 
           return (
@@ -44,13 +47,13 @@ class Menu extends Component {
                   <MenuOption
                     each={each}
                     isActive={id === each.id}
-                    active={this.active}
+                    // active={this.active}
                     key={each.id}
                   />
                 ))}
               </ul>
-              <div className={`contact-us-container ${contactUsText}`}>
-                <p className="contact">CONTACT US</p>
+              <div className={`contact-us-container ${contactUsText2}`}>
+                <p className={`contact ${contactUsText2}`}>CONTACT US</p>
                 <div className="logos-container">
                   <img
                     src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png "
@@ -68,7 +71,9 @@ class Menu extends Component {
                     className="app-logo"
                   />
                 </div>
-                <p>Enjoy! Now to see your channels and recommendations!</p>
+                <p className={`contact-us-p ${contactUsText2}`}>
+                  Enjoy! Now to see your channels and recommendations!
+                </p>
               </div>
             </div>
           )
@@ -85,6 +90,7 @@ const MenuOption = props => (
       const {id, link, optionType, optionIcon} = each
       const MyComponent = optionIcon
       const {lightTheme, clickedMenuOption} = value
+
       const contactUsText = lightTheme ? null : 'contact-text'
 
       const clickedId = () => {
@@ -97,9 +103,28 @@ const MenuOption = props => (
 
       const optionFont = isActive ? 'weight' : null
 
-      return (
+      const activeMenuItem = isActive ? 'active-menu-item' : null
+
+      /* activeMenuItem = lightTheme ? null : 'dark-option' */
+
+      const darkActiveOption = isActive ? 'dark-option' : null
+
+      return lightTheme ? (
         <Link to={link} className="menu-link">
-          <li>
+          <li className={`menu-li-item ${activeMenuItem}`}>
+            <button
+              className={`menu-item-container ${contactUsText}`}
+              type="button"
+              onClick={clickedId}
+            >
+              <MyComponent size={20} className={active} />
+              <h1 className={`menu-option ${optionFont}`}>{optionType}</h1>
+            </button>
+          </li>
+        </Link>
+      ) : (
+        <Link to={link} className="menu-link">
+          <li className={`menu-li-item ${darkActiveOption}`}>
             <button
               className={`menu-item-container ${contactUsText}`}
               type="button"

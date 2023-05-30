@@ -26,16 +26,28 @@
   height: 30px;
   border-radius: 5px;
 }
+.logout-icon {
+  display: none;
+}
 .theme-img {
   height: 30px;
   margin: 15px;
+}
+.profile-hamber-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .profile-img {
   height: 30px;
   margin: 15px;
 }
+.hamberger-menu {
+  display: none;
+}
 .nav-dark {
-  background-color: #383838;
+  background-color: #212121;
+  border-bottom: 0px solid;
 }
 .dark-btn {
   background-color: transparent;
@@ -59,7 +71,6 @@
   width: 280px;
   margin-top: 40px;
   font-family: 'Roboto';
-  /* color: #fff; */
 }
 .logout-text {
   font-size: 20px;
@@ -101,4 +112,49 @@
   color: #fff;
   border: none;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar-container {
+    padding: 10px 25px;
+  }
+  /* .navbar {
+    position: fixed;
+    top: 0;
+
+    left: 0;
+    width: 100%;
+    min-height: 10vh;
+    transition: top 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .navbar.hidden {
+    top: -70px;
+  } */
+  .logout-btn {
+    display: none;
+  }
+  .logout-icon {
+    display: block;
+    align-self: center;
+    margin-left: 13px;
+    margin-bottom: 5px;
+  }
+  .profile-img {
+    /* display: none; */
+    margin: 15px 7px;
+    height: 26px;
+    margin-bottom: 18px;
+  }
+  .hamberger-menu {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .navbar-container {
+    /* box-shadow: 1px 1px 4px 1px #e4e7eb; */
+  }
+  .nav-dark {
+    /* border-bottom: 1px solid #000; */
+  }
 }

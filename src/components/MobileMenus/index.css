@@ -1,0 +1,24 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.mobile-menu-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile-menu-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 4px;
+}
+.menu-icon {
+  padding-left: 5px;
+  margin-left: 12px;
+}
+@media screen and (max-width: 576px) {
+  .menu-option {
+    font-size: 15px;
+  }
+}

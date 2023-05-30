@@ -1,5 +1,5 @@
 {
-  "homepage": "https://veerappa-reddy.github.io/nxt-watch",
+  "homepage": "https://localhost:3000/",
   "name": "nxt-watch",
   "private": true,
   "version": "1.0.0",
@@ -22,7 +22,7 @@
     "msw": "0.34.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-icons": "4.2.0",
+    "react-icons": "4.8.0",
     "react-loader-spinner": "4.0.0",
     "react-player": "2.9.0",
     "react-router-dom": "5.2.0",

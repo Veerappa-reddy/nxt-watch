@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom'
+import {formatDistance} from 'date-fns'
 import SavedVideoContext from '../../context/SavedVideoContext'
 import './index.css'
 
-const VideoItem = props => {
+const HomeVideoItem = props => {
   const {videoItemDetails} = props
   const {
     channel,
@@ -17,6 +18,13 @@ const VideoItem = props => {
     profileImageUrl: channel.profile_image_url,
   }
   const {name, profileImageUrl} = updatedChannelDetails
+  const formatDate = formatDistance(new Date(publishedAt), new Date(), {
+    addSuffix: true,
+  })
+  const date = formatDate
+    .replace('about', '')
+    .replace('over', '')
+    .replace('almost', '')
 
   const renderLightHomeVideo = () => (
     <Link to={`/videos/${id}`} className="menu-link">
@@ -26,15 +34,17 @@ const VideoItem = props => {
           <div className="video-detail-container">
             <img
               src={profileImageUrl}
-              alt="channel logo "
-              className="channel-profile"
+              alt="channel logo"
+              className="home-vedio-item-channel-profile"
             />
             <div>
               <p className="video-title">{title}</p>
-              <p className="channel-name">{name}</p>
-              <div className="publish-count-details-container">
-                <p>{viewCount} views</p>
-                <p>{publishedAt}</p>
+              <div className="home-vedio-item">
+                <p className="channel-name">{name}</p>
+                <div className="publish-count-details-container">
+                  <p className="home-vedio-views">{viewCount} views</p>
+                  <p className="home-vedio-views">{date}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -52,14 +62,18 @@ const VideoItem = props => {
             <img
               src={profileImageUrl}
               alt="channel logo"
-              className="channel-profile"
+              className="home-vedio-item-channel-profile"
             />
-            <div>
+            <div className="vedio-item-text-cont">
               <p className="video-title">{title}</p>
-              <p className="channel-name">{name}</p>
-              <div className="publish-count-details-container">
-                <p>{viewCount} views</p>
-                {publishedAt !== '' && <p>{publishedAt}</p>}
+              <div className="home-vedio-item">
+                <p className="channel-name dark-item-views">{name}</p>
+                <div className="publish-count-details-container ">
+                  <p className="home-vedio-views dark-item-views">
+                    {viewCount} views
+                  </p>
+                  <p className="home-vedio-views dark-item-views">{date}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -77,4 +91,4 @@ const VideoItem = props => {
     </SavedVideoContext.Consumer>
   )
 }
-export default VideoItem
+export default HomeVideoItem

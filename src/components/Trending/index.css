@@ -4,6 +4,7 @@
   margin: 30px;
   margin-bottom: 10px;
   margin-left: 34px;
+  background-color: ;
 }
 .trending-heading {
   padding-left: 10px;
@@ -11,8 +12,8 @@
 .trending-videos-container {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
   height: 80vh;
+  overflow-y: scroll;
 }
 .trending-videos-container::-webkit-scrollbar {
   display: none;
@@ -20,4 +21,83 @@
 .trend {
   background-color: #383838;
   color: #fff;
+}
+.menu-option-icon {
+  /* background-color: #475569; */
+}
+.trending-bg-container {
+  min-height: 100vh;
+  margin-bottom: 0px;
+}
+.trend-bg-2 {
+  background-color: #212121;
+}
+.trend-container {
+  display: flex;
+  margin: 20px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.trend-videos-main-container {
+  width: 100vw;
+  background-color: #f9f9f9;
+  height: 60%;
+  background-color: #000;
+  color: #fff;
+}
+.trend-videos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.trend-bg-3 {
+  background-color: #000;
+  color: #fff;
+}
+.mobile-trend-vedios-container {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .trending-container {
+    display: none;
+  }
+  .home-container {
+    margin-left: 0px;
+    height: 77vh;
+  }
+  .tre .trending-videos-container {
+    /* min-height: 100vh;
+    background-color: #000; */
+  }
+  .dark-trend-vedios-container {
+    background-color: #000;
+    height: 100vh;
+  }
+  .trending-videos-container {
+    overflow-y: visible;
+    /* background-color: #000; */
+  }
+  .trend-videos-main-container {
+    min-height: 100%;
+    background-color: #000;
+    min-height: 100vh;
+    /* display: none; */
+  }
+  .trend-bg-3 {
+    /* background-color: #000;
+    height: 100vh; */
+  }
+  .trending-bg-container {
+    background-color: #000;
+    min-height: 100vh;
+  }
+  .mobile-trend-vedios-container {
+    display: block;
+    background-color: #000;
+    min-height: 100vh;
+  }
+  .trend-container {
+    background-color: #000;
+    height: 100%;
+  }
 }

@@ -2,11 +2,13 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import ReactPlayer from 'react-player'
 import Loader from 'react-loader-spinner'
+import {formatDistance} from 'date-fns'
 import {AiOutlineLike} from 'react-icons/ai'
 import {BiDislike} from 'react-icons/bi'
 import {MdPlaylistAdd} from 'react-icons/md'
 import SavedVideoContext from '../../context/SavedVideoContext'
 import Menu from '../Menu'
+// import MobileMenus from '../MobileMenus'
 import Header from '../Header'
 import './index.css'
 
@@ -136,6 +138,7 @@ class VideoItemDetails extends Component {
         } = videoItemDetails
         const {name, subscriberCount, profileImageUrl} = channel
         const {isLiked, isDisLiked} = this.state
+        console.log(isLiked)
 
         const likeBtn = isLiked ? 'liked' : null
         const dislikeBtn = isDisLiked ? 'disliked' : null
@@ -158,25 +161,35 @@ class VideoItemDetails extends Component {
 
         const videoOptions = lightTheme ? null : 'veer'
 
+        const formatDate = formatDistance(new Date(publishedAt), new Date(), {
+          addSuffix: true,
+        })
+        const date = formatDate
+          .replace('about', '')
+          .replace('over', '')
+          .replace('almost', '')
+
         return (
           <div className="video-item-2">
-            <ReactPlayer
-              url={videoUrl}
-              width={850}
-              height={400}
-              className="video"
-              playing
-            />
+            <div className="react-video">
+              <ReactPlayer
+                url={videoUrl}
+                width="100%"
+                height="100%"
+                playing
+                controls
+              />
+            </div>
             <div className="video-item-text-1">
               <p className="title">{title}</p>
               <div className="views-like-container ">
                 <div className="views-container">
                   <p className="views-count">{viewCount} views</p>
-                  <p className="published-at">{publishedAt}</p>
+                  <p className="published-at">{date}</p>
                 </div>
                 <div className="like-dislike-container ">
                   <div className={`like-container ${videoOptions}`}>
-                    <AiOutlineLike size={15} className={likeBtn} />
+                    <AiOutlineLike className={`like-button ${likeBtn}`} />
                     <button
                       className={`like-btn ${likeBtn}`}
                       type="button"
@@ -186,7 +199,7 @@ class VideoItemDetails extends Component {
                     </button>
                   </div>
                   <div className={`like-container ${videoOptions}`}>
-                    <BiDislike size={15} className={dislikeBtn} />
+                    <BiDislike className={`like-button ${dislikeBtn}`} />
                     <button
                       className={`like-btn ${dislikeBtn}`}
                       type="button"
@@ -196,7 +209,7 @@ class VideoItemDetails extends Component {
                     </button>
                   </div>
                   <div className={`like-container ${saveTextColor}`}>
-                    <MdPlaylistAdd size={15} />
+                    <MdPlaylistAdd className="like-button" />
                     <button
                       type="button"
                       className={`like-btn ${saveTextColor}`}
@@ -216,8 +229,8 @@ class VideoItemDetails extends Component {
                 className="channel-profile-2"
               />
               <div className="subscribe-cont">
-                <p>{name}</p>
-                <p>{subscriberCount} subscribers</p>
+                <p className="chnl-name">{name}</p>
+                <p className="subsribers">{subscriberCount} subscribers</p>
               </div>
             </div>
             <p className="description">{description}</p>

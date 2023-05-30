@@ -1,8 +1,8 @@
 .menu-container {
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
-  width: 20vw;
+  /* margin-top: 10px; */
+  width: 25vw;
   list-style-type: none;
 }
 .menu-item-container {
@@ -13,6 +13,17 @@
   background-color: transparent;
   border: none;
   color: #475569;
+  padding-top: 5px;
+}
+.active-menu-item {
+  background-color: #f1f5f9;
+}
+.menu-li-item {
+  margin-bottom: 10px;
+  padding: 0.5px;
+  margin-left: 0px;
+  padding-top: 3px;
+  padding-left: 15px;
 }
 .menu-option {
   padding-left: 20px;
@@ -29,12 +40,15 @@
 .app-logo {
   width: 30px;
   margin: 10px;
+  margin-right: 15px;
+  margin-left: 0px;
 }
 .logos-container {
   display: flex;
 }
 .contact-us-container {
   margin-top: 20px;
+  margin-left: 28px;
   /* color: #424242; */
 }
 .menu-link {
@@ -55,4 +69,26 @@
 }
 .weight {
   font-weight: 600;
+}
+.contact {
+  font-weight: 600;
+  color: #475569;
+}
+.contact-us-p {
+  font-weight: 500;
+  color: #475569;
+}
+.dark-option {
+  background-color: #606060;
+}
+.contact-text-color {
+  color: #fff;
+}
+@media screen and (max-width: 576px) {
+  .menu-follow-container {
+    display: none;
+  }
+  .menu-link {
+    /* background-color: #000; */
+  }
 }

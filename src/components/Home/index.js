@@ -5,9 +5,11 @@ import Loader from 'react-loader-spinner'
 import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai'
 import Menu from '../Menu'
 import Header from '../Header'
+
 import HomeVideoItem from '../HomeVideoItem'
 import SavedVideoContext from '../../context/SavedVideoContext'
 import './index.css'
+import MobileMenus from '../MobileMenus'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -47,7 +49,7 @@ class Home extends Component {
       const updatedData = data.videos.map(each => ({
         channel: each.channel === undefined ? '' : each.channel,
         id: each.id,
-        publishedAt: each.published_at === undefined ? '' : each.publishedAt,
+        publishedAt: each.published_at,
         thumbnailUrl: each.thumbnail_url,
         title: each.title,
         viewCount: each.view_count,
@@ -125,18 +127,39 @@ class Home extends Component {
     </SavedVideoContext.Consumer>
   )
 
-  renderHomeVideos = () => {
-    const {videosList} = this.state
-    // console.log(videosList)
+  //   renderHomeVideos = () => {
+  //     const {videosList} = this.state
+  //     // console.log(videosList)
 
-    return (
-      <ul className="home-videos-container">
-        {videosList.length > 0
-          ? this.renderVideosList()
-          : this.renderNoResultsFound()}
-      </ul>
-    )
-  }
+  //     return (
+  //       <ul className="home-videos-container">
+  //         {videosList.length > 0
+  //           ? this.renderVideosList()
+  //           : this.renderNoResultsFound()}
+  //       </ul>
+  //     )
+  //   }
+
+  renderHomeVideos = () => (
+    <SavedVideoContext.Consumer>
+      {value => {
+        const {lightTheme} = value
+        const {videosList} = this.state
+
+        const darkHomeVediosContainer = lightTheme
+          ? null
+          : 'dark-home-vedios-container'
+
+        return (
+          <ul className={`home-videos-container ${darkHomeVediosContainer}`}>
+            {videosList.length > 0
+              ? this.renderVideosList()
+              : this.renderNoResultsFound()}
+          </ul>
+        )
+      }}
+    </SavedVideoContext.Consumer>
+  )
 
   renderLoadingView = () => (
     <SavedVideoContext.Consumer>
@@ -235,6 +258,9 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <div className="mobile-options-container">
+          <MobileMenus id={1} />
+        </div>
       </div>
     )
   }
@@ -298,6 +324,9 @@ class Home extends Component {
               {this.renderApiStateDetails()}
             </div>
           </div>
+        </div>
+        <div className="mobile-options-container">
+          <MobileMenus id={1} />
         </div>
       </div>
     )

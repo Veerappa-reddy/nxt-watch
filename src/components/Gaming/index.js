@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 import {AiFillFire} from 'react-icons/ai'
 import Menu from '../Menu'
 import Header from '../Header'
+import MobileMenus from '../MobileMenus'
 import GamingVideoItem from '../GamingVideoItem'
 import SavedVideoContext from '../../context/SavedVideoContext'
 import './index.css'
@@ -126,7 +127,7 @@ class Gaming extends Component {
     // console.log(videosList)
 
     return (
-      <ul className="home-videos-container">
+      <ul className="game-videos-container">
         {videosList.length > 0
           ? this.renderVideosList()
           : this.renderNoResultsFound()}
@@ -154,13 +155,16 @@ class Gaming extends Component {
       <Header />
       <div className="home-container">
         <Menu id={3} />
-        <div className="videos-main-container">
+        <div className="gaming-videos-main-container">
           <div className="trending-container">
             <AiFillFire className="search-icon" size={35} color="red" />
             <h1 className="trending-heading">Gaming</h1>
           </div>
           <div className="videos-container">{this.renderApiStateDetails()}</div>
         </div>
+      </div>
+      <div className="mobile-options-container">
+        <MobileMenus id={3} />
       </div>
     </div>
   )
@@ -177,6 +181,9 @@ class Gaming extends Component {
           </div>
           <div className="videos-container">{this.renderApiStateDetails()}</div>
         </div>
+      </div>
+      <div className="mobile-options-container">
+        <MobileMenus id={3} />
       </div>
     </div>
   )
